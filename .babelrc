@@ -1,0 +1,21 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "chrome": "60"
+        }
+      }
+    ],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "transform-object-rest-spread",
+    "transform-class-properties",
+    "react-hot-loader/babel",
+    "syntax-dynamic-import",
+    ["import", { "libraryName": "antd", "libraryDirectory": "es" }],
+    "@babel/plugin-proposal-object-rest-spread"
+  ]
+}

@@ -1,0 +1,74 @@
+.input-areas {
+  background-color: #212a2f;
+  // display: flex;
+
+  .form-dis {
+    width: 100%;
+    color: #93a1b0;
+    height: 568px;
+    padding-top: 50px;
+    padding-left: 120px;
+    .login-form {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      .left {
+        width: 45%;
+        margin-right: 40px;
+      }
+      .ant-select-selection {
+        height: 56px;
+        .ant-select-selection__rendered {
+          height: 56px;
+          line-height: 56px;
+        }
+      }
+    }
+    label {
+      display: inline-block;
+      color: #93a1b0;
+      margin-bottom: 10px;
+    }
+  }
+  .total {
+    width: 50%;
+    .content {
+      color: #ffffff;
+      padding-left: 54px;
+      padding-top: 54px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      .no {
+        font-size: 20px;
+      }
+      .duty {
+        font-size: 46px;
+        margin-bottom: 46px;
+      }
+      .spe-duty {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+      .detail {
+        width: 454px;
+        display: inline-block;
+        margin-bottom: 67px;
+      }
+      .create {
+        color: #93a1b0;
+        margin-bottom: 19px;
+      }
+      .submit-btn {
+        width: 297px;
+        height: 56px;
+        line-height: 56px;
+        border: none;
+        background-color: #ff695b;
+        border-radius: 4px;
+        color: #ffffff;
+        font-size: 16px;
+      }
+    }
+  }
+}
