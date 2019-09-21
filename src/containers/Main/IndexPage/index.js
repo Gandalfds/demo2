@@ -23,12 +23,18 @@ class IndexPage extends React.Component {
   constructor(props) {
     super(props);
     this.state={
-      expandIconPosition: "right"
+      expandIconPosition: "right",
+      showMenu: false
     };
   }
   handleSubmit = () => {
     // this.refs.submitForms.handleSubmit();
     console.log(this.refs.submitForms);
+  };
+  handleShowMenu=()=>{
+    this.setState({
+      showMenu: !this.state.showMenu
+    });
   };
   render() {
     return (
@@ -53,7 +59,6 @@ class IndexPage extends React.Component {
               </span>
             </div>
           </div>
-
           <div className="header-right">
             <ul>
               {Nav.map(item => (
@@ -64,7 +69,21 @@ class IndexPage extends React.Component {
               <div className="btn">Get Start</div>
             </div>
           </div>
+          <div className="header-right-xs">
+            <span className="btn" onClick={this.handleShowMenu}>
+              |||
+            </span>
+          </div>
         </header>
+        {
+          this.state.showMenu&&<div className="menu">
+            <ul>
+              {Nav.map(item => (
+                <li key={item.key}>{item.name}</li>
+              ))}
+            </ul>
+          </div>
+        }
         <div className="content-index">
           <div className="introduce">
             <span className="title">
