@@ -1,7 +1,7 @@
 import React from "react";
 import SubmitForms from "../From";
 
-import { LocaleProvider, Button } from "antd";
+import { LocaleProvider, Collapse, Icon, Select  } from "antd";
 
 import "./style";
 
@@ -10,10 +10,21 @@ const Nav = [
   { name: "Platform", value: "2", key: 2 },
   { name: "Case Studies", value: "3", key: 3 }
 ];
-
+const { Panel } = Collapse;
+const genExtra = () => (
+  <Icon
+    type="setting"
+    onClick={event => {
+      // If you don't want click extra trigger collapse, you can prevent this:
+      event.stopPropagation();
+    }}
+  />);
 class IndexPage extends React.Component {
   constructor(props) {
     super(props);
+    this.state={
+      expandIconPosition: "right"
+    };
   }
   handleSubmit = () => {
     // this.refs.submitForms.handleSubmit();
@@ -172,7 +183,45 @@ class IndexPage extends React.Component {
               <li>24/7 Support</li>
             </ul>
           </div>
-				</div>
+          <div className="right-xs">
+          <Collapse
+            expandIconPosition={this.state.expandIconPosition}
+          >
+            <Panel header="Solutions" key="1">
+              <div>
+                <ul>
+                  <li>Importers & Traders</li>
+                  <li>Enterprises</li>
+                  <li>Micro-businesses</li>
+                  <li>Ecommerce</li>
+                  <li>By Industry and Goods</li>
+                </ul>
+              </div>
+            </Panel>
+            <Panel header="Services" key="2">
+              <div>
+                <ul>
+                  <li>Customs Clearance</li>
+                  <li>Import Agency</li>
+                  <li>Freight Forwarding</li>
+                  <li>Warehousing & Delivery</li>
+                  <li>Cold Chain & Perishables</li>
+                </ul>
+              </div>
+            </Panel>
+            <Panel header="Company" key="3">
+              <div>
+                <ul>
+                  <li>Our Platform</li>
+                  <li>About Us</li>
+                  <li>Careers</li>
+                  <li>24/7 Support</li>
+                </ul>
+              </div>
+            </Panel>
+          </Collapse>
+          </div>
+          </div>
 				<div className="bottom-index">
 					<div className="container">
 						<p className="white">Legal</p>
