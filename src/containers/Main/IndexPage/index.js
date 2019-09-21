@@ -54,7 +54,7 @@ class IndexPage extends React.Component {
             </div>
           </div>
         </header>
-        <div className="content">
+        <div className="content-index">
           <div className="introduce">
             <span className="title">
               Import duties, taxes, and
@@ -173,7 +173,7 @@ class IndexPage extends React.Component {
             </ul>
           </div>
 				</div>
-				<div className="bottom">
+				<div className="bottom-index">
 					<div className="container">
 						<p className="white">Legal</p>
 						<p>
@@ -184,7 +184,7 @@ class IndexPage extends React.Component {
 							#2594279 and MC #906604-B. All transactions are subject to Flexport’s standard terms and conditions, 
 							available at www.flexport.com/terms 沪ICP备16041494号
 						</p>
-						<p className="last">Copyright © 2019 Flexport Inc.&nbsp;&nbsp;|&nbsp;&nbsp;Privacy Policy&nbsp;&nbsp;|&nbsp;&nbsp;erms of Use</p>
+						<span className="last">Copyright © 2019 Flexport Inc.&nbsp;&nbsp;|&nbsp;&nbsp;Privacy Policy&nbsp;&nbsp;|&nbsp;&nbsp;erms of Use</span>
 					</div>
 				</div>
       </div>

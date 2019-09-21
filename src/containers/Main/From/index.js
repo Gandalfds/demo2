@@ -6,12 +6,7 @@ import "./style";
 const { Option } = Select;
 const { TextArea } = Input;
 
-const Childrens = [];
-for (let i = 10; i < 36; i++) {
-  Childrens.push(
-    <Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>
-  );
-}
+
 
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some(field => fieldsError[field]);
@@ -20,7 +15,11 @@ function hasErrors(fieldsError) {
 class Forms extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      categoryValue: 0,
+      shippingValue: 0,
+      totalValue: 0
+    };
   }
   handleSubmit = e => {
     e.preventDefault();
@@ -31,9 +30,40 @@ class Forms extends React.Component {
       }
     });
   };
-  render() {
-    const { getFieldDecorator, getFieldsError } = this.props.form;
 
+  getCategoryVlaue =(obj)=>{
+    console.log(obj);
+    let {shippingValue} = this.state;
+    this.setState({
+      categoryValue: obj,
+      totalValue: obj + shippingValue
+    });
+  }
+
+  getShippingVlaue = (obj) =>{
+    console.log(obj);
+    let {categoryValue} = this.state;
+    this.setState({
+      shippingValue: obj,
+      totalValue: obj + categoryValue
+    });
+  }
+
+  render() {
+    let {totalValue} = this.state;
+    const { getFieldDecorator, getFieldsError } = this.props.form;
+    const categorys = [
+      {name: "Lobster",value:10.00,unit:"$"},
+      {name: "Shark",value:20.00,unit:"$"},
+      {name: "Abalone",value:25.00,unit:"$"},
+      {name: "Crab",value:30.00,unit:"$"}
+    ];
+    const shippings = [
+      {name: "Ocean",value:35.00,unit:"$"},
+      {name: "Plane",value:40.00,unit:"$"},
+      {name: "Train",value:25.00,unit:"$"}
+    ];
+    console.log(totalValue);
     return (
       <div className="input-areas">
         <div className="form-dis">
@@ -72,7 +102,11 @@ class Forms extends React.Component {
                     { required: true, message: "Please Select a category!" }
                   ]
                 })(
-                  <Select placeholder="Select a category">{Childrens}</Select>
+                  <Select placeholder="Select a category" onChange={this.getCategoryVlaue}>
+                    {categorys.map((item,index)=>(
+                      <Option value={item.value} key={index}>{item.name}</Option>
+                    ))}
+                  </Select>
                 )}
               </Form.Item>
               <label>Select a shipping type...</label>
@@ -85,8 +119,10 @@ class Forms extends React.Component {
                     }
                   ]
                 })(
-                  <Select placeholder="Select a shipping type">
-                    {Childrens}
+                  <Select placeholder="Select a shipping type" onChange={this.getShippingVlaue}>
+                  {shippings.map((item,index)=>(
+                    <Option value={item.value} key={index}>{item.name}</Option>
+                  ))}
                   </Select>
                 )}
               </Form.Item>
@@ -94,7 +130,7 @@ class Forms extends React.Component {
             <div className="total">
               <div className="content">
                 <span className="no">HS 0202.20.06.00</span>
-                <span className="duty">Duty: $50.00/kg</span>
+                <span className="duty">Duty: ${totalValue}/Kg</span>
                 <span className="spe-duty">Special Duty</span>
                 <span className="detail">
                   Free: A+, AU, BH, CA, CL, CO, D, E*, IL, JO, KR, MA, MX, OM,

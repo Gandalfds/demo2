@@ -14,6 +14,7 @@ $header-height: 64px;
     .header-left {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       .logo {
         position: relative;
         .name {
@@ -31,13 +32,14 @@ $header-height: 64px;
       height: 100%;
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       ul {
         height: 100%;
         display: flex;
         align-items: center;
         margin-bottom: 0;
         li {
-          margin-left: 54px;
+          margin-left: 30px;
           cursor: pointer;
           font-size: 14px;
           font-weight: 500;
@@ -60,17 +62,17 @@ $header-height: 64px;
       }
     }
   }
-  .content {
+  .content-index {
     .introduce {
       padding-left: 120px;
-      padding-top: 50px;
+      padding-top: 107px;
       margin-bottom: 73px;
       .title {
         display: block;
         color: #212a2f;
         font-size: 56px;
         letter-spacing: -1px;
-        line-height: 68px;
+        line-height: 60px;
         margin-bottom: 21px;
       }
       .detail {
@@ -78,23 +80,25 @@ $header-height: 64px;
       }
     }
     .customs-duty{
-      height: 560px;
+      // height: 560px;
       .content{
         display: flex;
         flex-direction: row;
         height: 100%;
         padding-left: 120px;
-        padding-top: 109px;
+        padding-top: 107px;
         padding-right: 120px;
+        flex-wrap: wrap;
       }
       .left{
         width: 50%;
         height: 100%;
+        padding-right: 30px;
         .title{
           font-size: 56px;
           font-weight: 500;
           color: #212A2F;
-          line-height: 68px;
+          line-height: 60px;
           letter-spacing: -1px;
           display: inline-block;
           margin-bottom: 51px;
@@ -103,7 +107,7 @@ $header-height: 64px;
           font-size: 16px;
           color: #5D7079;
           display: inline-block;
-          width: 460px;
+          // width: 460px;
         }
         .line-1{
           display: inline-block;
@@ -117,9 +121,10 @@ $header-height: 64px;
       }
       .right{
         width: 50%;
+        // padding-left: 70px;
         height: 100%;
         .image{
-          width: 600px;
+          width: 100%;
           max-width: 100%;
           height: 360px;
           display: inline-block;
@@ -128,20 +133,23 @@ $header-height: 64px;
       }
     }
     .duty-rate{
-      height: 560px;
+      // height: 560px;
       .content{
         display: flex;
         flex-direction: row;
+        align-items: center;
         height: 100%;
         padding-left: 120px;
         padding-right: 120px;
-        padding-top: 109px;
+        padding-top: 107px;
+        padding-bottom: 107px;
+        flex-wrap: wrap-reverse;
       }
       .left{
         width: 50%;
         height: 100%;
         .image{
-          width: 600px;
+          width: 100%;
           max-width: 100%;
           height: 360px;
           display: inline-block;
@@ -151,12 +159,12 @@ $header-height: 64px;
       .right{
         width: 50%;
         height: 100%;
-        padding-left: 120px;
+        padding-left: 70px;
         .title{
           font-size: 56px;
           font-weight: 500;
           color: #212A2F;
-          line-height: 68px;
+          line-height: 60px;
           letter-spacing: -1px;
           display: inline-block;
           margin-bottom: 51px;
@@ -165,7 +173,7 @@ $header-height: 64px;
           font-size: 16px;
           color: #5D7079;
           display: inline-block;
-          width: 460px;
+          // width: 460px;
         }
         .line-1{
           display: inline-block;
@@ -210,12 +218,12 @@ $header-height: 64px;
       }
     }
   }
-  .bottom{
+  .bottom-index{
     background-color: #1A262f;
     padding-left: 120px;
     padding-right: 120px;
     color: #93A1B0;
-    height: 271px;
+    min-height: 220px;
     .container{
       border-top: 1px solid #5D7079;
       padding-top: 40px;
@@ -232,6 +240,108 @@ $header-height: 64px;
     }
     .last{
       margin-top: 30px;
+    }
+  }
+  @media screen and (max-width: 950px) {
+    .header{
+      padding: 0 10px;
+    }
+    .header-left{
+      .name{
+        font-size: 24px !important;
+      }
+    }
+    .header-right{
+      ul{
+        padding-left: 0;
+        li{
+          margin-left: 10px !important;
+        }
+      }
+      .header-btn{
+        margin-left: 10px !important;
+        .btn{
+          padding: 10px 4px !important;
+        }
+      }
+    }
+    .content-index{
+      .introduce{
+        padding-left: 10px;
+        margin-bottom: 50px;
+        padding-top: 50px;
+      }
+    }
+    .customs-duty{
+      height: auto !important;
+      .content{
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        padding-top: 30px !important;
+        .left{
+          width: 100%;
+          padding-right: 0 !important;
+        }
+        .right{
+          margin-top: 20px;
+          width: 100%;
+          .image{
+            width: 100%;
+          }
+        }
+      }
+      .title{
+        font-size: 32px !important;
+        margin-bottom: 30px !important;
+      }
+    }
+    .duty-rate{
+      height: auto !important;
+      margin-bottom: 30px;
+      .content{
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+        .right{
+          width: 100%;
+          padding-left: 10px !important;
+          padding-right: 0 !important;
+        }
+        .left{
+          margin-top: 20px;
+          width: 100%;
+          .image{
+            width: 100%;
+          }
+        }
+      }
+      .title{
+        font-size: 32px !important;
+        margin-bottom: 30px !important;
+      }
+    }
+    .footer{
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 30px;
+      height: auto;
+      .right{
+        ul{
+          padding-left: 0;
+        }
+      }
+    }
+    .bottom-index{
+      padding-left: 10px;
+      padding-right: 10px;
+      .last{
+        margin-bottom: 0;
+        // padding-bottom: 10px;
+      }
+      .container{
+        border-top: none;
+      }
     }
   }
 }

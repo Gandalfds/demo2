@@ -5,13 +5,15 @@
   .form-dis {
     width: 100%;
     color: #93a1b0;
-    height: 568px;
+    height: auto;
     padding-top: 50px;
+    padding-bottom: 50px;
     padding-left: 120px;
     .login-form {
       display: flex;
       justify-content: center;
       width: 100%;
+      flex-wrap: wrap;
       .left {
         width: 45%;
         margin-right: 40px;
@@ -51,7 +53,7 @@
         margin-bottom: 15px;
       }
       .detail {
-        width: 454px;
+        // width: 454px;
         display: inline-block;
         margin-bottom: 67px;
       }
@@ -68,6 +70,30 @@
         border-radius: 4px;
         color: #ffffff;
         font-size: 16px;
+      }
+    }
+  }
+  @media screen and (max-width:950px) {
+    .form-dis{
+      padding-left: 20px;
+      padding-right: 0;
+      padding-top: 30px;
+      height: auto;
+      .login-form{
+        width: 100%;
+        .left{
+          width: 100%;
+        }
+        .total{
+          width: 100%;
+          .content{
+            padding-left: 0;
+            padding-top: 20px;
+            .detail{
+              margin-bottom: 30px;
+            }
+          }
+        }
       }
     }
   }
