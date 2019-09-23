@@ -12,6 +12,7 @@ export default {
 
   remove: function(key) {
     return window.localStorage.removeItem(key);
+    
   },
 
   clear: function() {
