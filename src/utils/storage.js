@@ -8,11 +8,12 @@ export default {
 
   get: function(key) {
     return window.localStorage.getItem(key);
+    
   },
 
   remove: function(key) {
     return window.localStorage.removeItem(key);
-    
+
   },
 
   clear: function() {
